@@ -107,7 +107,8 @@ class MealPlanCard extends LitElement {
     <div class="meal">
         <div class="day">
             <div>
-                <div class="card-header">${this.getDay(daily.day, lang, tz)} - ${this.getShortDay(daily.day, lang)}</div>
+                Hello!
+                <div class="card-header">${this.getDay(daily.day, lang, tz)}, ${this.getMonth(daily.day, lang, tz)} </div>
                 <p style="text-indent: 2em;">${typeof daily.section !== 'undefined' && daily.section.name !== null
                 ? daily.section.name
                 : ""}
@@ -198,7 +199,7 @@ class MealPlanCard extends LitElement {
     theDate = theDate.split('T')[0] + " 12:00"
 
     return new Date(theDate).toLocaleString(lang, {
-      weekday: "short", timeZone: tz,
+      weekday: "long", timeZone: tz,
     })
   }
 
@@ -206,6 +207,14 @@ class MealPlanCard extends LitElement {
     theDate = theDate.split('T')[0] + " 12:00"
 
     return new Date(theDate).toLocaleString(lang, { dateStyle: "short" })
+  }
+
+  getMonth(theDate, lang, tz) {
+    theDate = theDate.split('T')[0] + " 12:00"
+
+    return new Date(theDate).toLocaleString(lang, {
+      month: "long", timeZone: tz,
+    })
   }
 
   static get styles() {
