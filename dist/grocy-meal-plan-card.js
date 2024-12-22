@@ -109,6 +109,7 @@ class MealPlanCard extends LitElement {
         <div class="day">
             <div>
                 <div class="card-header">
+                  Another Hello!
                   <div class="day"> ${this.getDay(daily.day, lang, tz)}, ${this.getMonth(daily.day, lang, tz)}. ${this.getDayDate(daily.day, lang, tz)} </div>
                   <p style="text-indent: 2em;">${typeof daily.section !== 'undefined' && daily.section.name !== null
                     ? daily.section.name
