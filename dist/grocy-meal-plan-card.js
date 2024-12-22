@@ -102,7 +102,6 @@ class MealPlanCard extends LitElement {
     
     // Build meal plan array with filtering
     var newplan = this.buildPlan(meals, lang, tz);
-    console.log(newplan)
     var newDiv = document.createElement('div');
     var innercontent = newplan.map((daily) => `
     <div class="meal">
@@ -193,7 +192,16 @@ class MealPlanCard extends LitElement {
     else {
       meals.slice(0,this._config.count ? this._config.count : 5).map(daily => newplan.push(daily))
     }
-    return newplan
+
+    // Sort the object first by date, then by the section sort_number (so breakfast comes before lunch)
+    return newplan.sort((a, b) => {
+        // Compare days
+        if (a.day < b.day) return -1;
+        if (a.day > b.day) return 1;
+
+        // Compare section.sort_number if days are equal
+        return a.section.sort_number - b.section.sort_number;
+    });
   }
 
   getDay(theDate, lang, tz) {
