@@ -107,12 +107,12 @@ class MealPlanCard extends LitElement {
     <div class="meal">
         <div class="day">
             <div>
-                Hello!
-                <div class="card-header">${this.getDay(daily.day, lang, tz)}, ${this.getMonth(daily.day, lang, tz)} </div>
-                <p style="text-indent: 2em;">${typeof daily.section !== 'undefined' && daily.section.name !== null
-                ? daily.section.name
-                : ""}
-                </p>
+                <div class="card-header">
+                  <div class="day"${this.getDay(daily.day, lang, tz)}, ${this.getMonth(daily.day, lang, tz)}. ${this.getDayDate(daily.day, lang, tz)} </div>
+                  <p style="text-indent: 2em;">${typeof daily.section !== 'undefined' && daily.section.name !== null
+                    ? daily.section.name
+                    : ""}
+                  </p>
             </div>
             <div>
                 <div class=".info inline">
@@ -203,17 +203,17 @@ class MealPlanCard extends LitElement {
     })
   }
 
-  getShortDay(theDate, lang) {
+  getDayDate(theDate, lang) {
     theDate = theDate.split('T')[0] + " 12:00"
 
-    return new Date(theDate).toLocaleString(lang, { dateStyle: "short" })
+    return new Date(theDate).getDay()
   }
 
   getMonth(theDate, lang, tz) {
     theDate = theDate.split('T')[0] + " 12:00"
 
     return new Date(theDate).toLocaleString(lang, {
-      month: "long", timeZone: tz,
+      month: "short", timeZone: tz,
     })
   }
 
@@ -239,13 +239,6 @@ class MealPlanCard extends LitElement {
             background-size: auto 100%;
             box-shadow: var(--ha-card-box-shadow,none);
             box-sizing: border-box;
-            border-radius: var(--ha-card-border-radius,6px);
-            border-width: var(--ha-card-border-width,1px);
-            border-style: solid;
-            border-color: var(--ha-card-border-color,var(--divider-color,#e0e0e0));        
-            position: relative;
-            padding: 0px 0.67em 0.67em 0.67em;
-            background-color: var(--secondary-background-color,rgb(119 119 119 / 25%))
           }
 
           .day {
