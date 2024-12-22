@@ -105,10 +105,11 @@ class MealPlanCard extends LitElement {
     var newDiv = document.createElement('div');
     var innercontent = newplan.map((daily) => `
     <div class="meal">
+        <pre> ${daily} </pre>
         <div class="day">
             <div>
                 <div class="card-header">
-                  <div class="day">${this.getDay(daily.day, lang, tz)}, ${this.getMonth(daily.day, lang, tz)}. ${this.getDayDate(daily.day, lang, tz)} </div>
+                  <div class="day"> ${this.getDay(daily.day, lang, tz)}, ${this.getMonth(daily.day, lang, tz)}. ${this.getDayDate(daily.day, lang, tz)} </div>
                   <p style="text-indent: 2em;">${typeof daily.section !== 'undefined' && daily.section.name !== null
                     ? daily.section.name
                     : ""}
