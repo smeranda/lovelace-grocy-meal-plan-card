@@ -237,7 +237,7 @@ class MealPlanCard extends LitElement {
           }
     
           .meal {
-            width: 100%;
+            width: 99%;
             overflow: hidden;
             margin-left: auto;
             margin-right: auto;
