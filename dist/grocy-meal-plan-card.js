@@ -179,7 +179,7 @@ class MealPlanCard extends LitElement {
     innercontent.forEach(cont => { newDiv.innerHTML += cont;} );
     
     if (newplan.length > 0) {
-      return htmlOutput;
+      return newDiv.innerHTML += htmlOutput;
     }
     else {
       return html`
