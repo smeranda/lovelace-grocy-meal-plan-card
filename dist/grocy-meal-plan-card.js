@@ -102,8 +102,43 @@ class MealPlanCard extends LitElement {
     
     // Build meal plan array with filtering
     var newplan = this.buildPlan(meals, lang, tz);
+    
+    // Group recipes by day and then by section
+    const groupedByDay = newplan.reduce((acc, recipe) => {
+        if (!acc[recipe.day]) acc[recipe.day] = {};
+        const sectionName = recipe.section.name;
+        if (!acc[recipe.day][sectionName]) acc[recipe.day][sectionName] = [];
+        acc[recipe.day][sectionName].push(recipe);
+        return acc;
+    }, {});
+    
     var newDiv = document.createElement('div');
-    var innercontent = newplan.map((daily) => `
+    
+    // Generate HTML
+    let htmlOutput = "";
+    for (const [day, sections] of Object.entries(groupedByDay)) {
+        htmlOutput += `<div class="day-group">`;
+        htmlOutput += `<h2>${day}</h2>`;
+
+        for (const [sectionName, recipes] of Object.entries(sections)) {
+            htmlOutput += `<div class="section-group">`;
+            htmlOutput += `<h3>${sectionName}</h3>`;
+            recipes.forEach(recipe => {
+                htmlOutput += `
+                    <div class="recipe">
+                        <h4>${recipe.recipe.name}</h4>
+                        <p>Servings: ${recipe.recipe_servings}</p>
+                    </div>
+                `;
+            });
+            htmlOutput += `</div>`;
+        }
+
+        htmlOutput += `</div>`;
+    }
+
+    // Currently not used, needs integrated into updated function
+    let innercontent = newplan.map((daily) => `
     <div class="meal">
         <div class="day">
             <div>
@@ -142,8 +177,9 @@ class MealPlanCard extends LitElement {
     </div>          
     `);
     innercontent.forEach(cont => { newDiv.innerHTML += cont;} );
+    
     if (newplan.length > 0) {
-      return newDiv;
+      return htmlOutput;
     }
     else {
       return html`
