@@ -118,7 +118,7 @@ class MealPlanCard extends LitElement {
     let htmlOutput = "";
     for (const [day, sections] of Object.entries(groupedByDay)) {
         htmlOutput += `<div class="day-group">`;
-        htmlOutput += `<h2>${day}</h2>`;
+        htmlOutput += `<h2>${this.getDay(day, lang, tz)}, ${this.getMonth(day, lang, tz)}. ${this.getDayDate(day, lang, tz)}</h2>`;
 
         for (const [sectionName, recipes] of Object.entries(sections)) {
             htmlOutput += `<div class="section-group">`;
@@ -137,8 +137,10 @@ class MealPlanCard extends LitElement {
         htmlOutput += `</div>`;
     }
 
+    newDiv.appendChild(htmlOutput);
+
     // Currently not used, needs integrated into updated function
-    let innercontent = newplan.map((daily) => `
+    let innercontent = groupedByDay.map((daily) => `
     <div class="meal">
         <div class="day">
             <div>
@@ -179,7 +181,7 @@ class MealPlanCard extends LitElement {
     innercontent.forEach(cont => { newDiv.innerHTML += cont;} );
     
     if (newplan.length > 0) {
-      return html`<div>${ htmlOutput } </div>`;
+      return newDiv;
     }
     else {
       return html`
