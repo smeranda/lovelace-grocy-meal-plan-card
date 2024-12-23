@@ -117,17 +117,16 @@ class MealPlanCard extends LitElement {
     // Generate HTML
     let htmlOutput = "";
     for (const [day, sections] of Object.entries(groupedByDay)) {
-        htmlOutput += `<div class="day-group">`;
-        htmlOutput += `<h2>${this.getDay(day, lang, tz)}, ${this.getMonth(day, lang, tz)}. ${this.getDayDate(day, lang, tz)}</h2>`;
+        htmlOutput += `<div class="dayGroup">`;
+        htmlOutput += `<h2 class="dayTitle">${this.getDay(day, lang, tz)}, ${this.getMonth(day, lang, tz)}. ${this.getDayDate(day, lang, tz)}</h2>`;
 
         for (const [sectionName, recipes] of Object.entries(sections)) {
             htmlOutput += `<div class="section-group">`;
-            htmlOutput += `<h3>${sectionName}</h3>`;
+            htmlOutput += `<h3 class="sectionTitle">${sectionName}</h3>`;
             recipes.forEach(recipe => {
                 htmlOutput += `
-                    <div class="meal-note">
+                    <div class="meal">
                         <h4>${recipe.recipe.name}</h4>
-                        <p>Servings: ${recipe.recipe_servings}</p>
                     </div>
                 `;
             });
@@ -227,25 +226,11 @@ class MealPlanCard extends LitElement {
   static get styles() {
     return css`
           ha-card {
-            cursor: pointer;
-            margin: auto;
-            padding-top: 1.3em;
-            padding-bottom: 1.3em;
-            padding-left: 1em;
-            padding-right: 1em;
-            position: relative;
+            padding: 1em;
           }
     
-          .meal {
-            width: 99%;
-            overflow: hidden;
-            margin-left: auto;
-            margin-right: auto;
-            margin-bottom: 10px;
-            background-repeat: no-repeat;
-            background-size: auto 100%;
-            box-shadow: var(--ha-card-box-shadow,none);
-            box-sizing: border-box;
+          .section-group {
+            padding-left: 1em;
           }
 
           .day {
@@ -269,21 +254,17 @@ class MealPlanCard extends LitElement {
             margin-left: 2.5%;
             alignment-baseline: text-after-edge;
           }
-
-          .daytitle {
-            color: var(--ha-card-header-color,--primary-text-color);
-            font-family: var(--ha-card-header-font-family,inherit);
-            font-size: var(--ha-card-header-font-size,24px);
-            letter-spacing: -0.012em;
-            line-height: 48px;
-            padding: 12px 16px 16px;
-            display: block;
-            margin-block: 0px;
-            font-weight: 400;
-            #font-weight: 600;
-            #font-size: 18px;
-            #text-shadow: 1px 1px 3px rgba(0,0,0,0.9);
-            #fill: #fff;              
+          
+          .dayGroup {
+            padding-bottom: 0.5em;
+            border-bottom: 1px solid var(--divider-color);
+            margin-bottom: 0.5em;
+          }
+          
+          .dayTitle {
+            color: var(--ha-card-header-color, --primary-text-color);
+            font-family: var(--ha-card-header-font-family, inherit);
+            font-size: var(--ha-card-header-font-size, 24px);            
           }
 
           .recipe_name {
