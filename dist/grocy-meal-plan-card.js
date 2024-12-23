@@ -126,7 +126,7 @@ class MealPlanCard extends LitElement {
             recipes.forEach(recipe => {
                 htmlOutput += `
                     <div class="meal">
-                        <h4>${recipe.recipe.name}</h4>
+                        <div class="recipeTitle">${recipe.recipe.name}</div>
                     </div>
                 `;
             });
@@ -260,13 +260,29 @@ class MealPlanCard extends LitElement {
             border-bottom: 1px solid var(--divider-color);
             margin-bottom: 0.5em;
           }
+
+          .dayGroup:last-of-type {
+            padding: 0;
+            margin: 0:
+            border-width: 0;
+          }
           
           .dayTitle {
+            font-weight: normal;
             color: var(--ha-card-header-color, --primary-text-color);
             font-family: var(--ha-card-header-font-family, inherit);
             font-size: var(--ha-card-header-font-size, 24px);            
           }
 
+          .sectionTitle {
+            font-weight: normal;
+          }
+
+          .recipeTitle {
+            font-weight: normal;
+            opacity: 0.8;
+          }
+          
           .recipe_name {
             font-size: 14px;
             text-shadow: 1px 1px 3px rgba(0,0,0,0.9);
