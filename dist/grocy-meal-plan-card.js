@@ -137,7 +137,7 @@ class MealPlanCard extends LitElement {
         htmlOutput += `</div>`;
     }
 
-    newDiv.appendChild(htmlOutput);
+    newDiv.innerHTML = htmlOutput;
 
     // Currently not used, needs integrated into updated function
     let innercontent = groupedByDay.map((daily) => `
@@ -178,9 +178,10 @@ class MealPlanCard extends LitElement {
         </div>
     </div>          
     `);
-    innercontent.forEach(cont => { newDiv.innerHTML += cont;} );
+    //innercontent.forEach(cont => { newDiv.innerHTML += cont;} );
     
     if (newplan.length > 0) {
+      console.log("we have a plan");
       return newDiv;
     }
     else {
