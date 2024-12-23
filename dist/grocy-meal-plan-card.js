@@ -125,7 +125,7 @@ class MealPlanCard extends LitElement {
             htmlOutput += `<h3>${sectionName}</h3>`;
             recipes.forEach(recipe => {
                 htmlOutput += `
-                    <div class="recipe">
+                    <div class="meal-note">
                         <h4>${recipe.recipe.name}</h4>
                         <p>Servings: ${recipe.recipe_servings}</p>
                     </div>
