@@ -178,7 +178,7 @@ class MealPlanCard extends LitElement {
         </div>
     </div>          
     `);
-    //innercontent.forEach(cont => { newDiv.innerHTML += cont;} );
+    // innercontent.forEach(cont => { newDiv.innerHTML += cont;} );
     
     if (newplan.length > 0) {
       console.log("we have a plan");
