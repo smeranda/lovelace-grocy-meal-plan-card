@@ -297,10 +297,7 @@ class MealPlanCard extends LitElement {
             font-style: italic;
             text-shadow: 1px 1px 3px rgba(0,0,0,0.9);
             fill: #fff;              
-          }          
-          .inline {
-              display: inline-block;
-          }
+          } 
           
           .pic {
                 width: 10em;
