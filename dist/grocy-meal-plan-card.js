@@ -138,47 +138,6 @@ class MealPlanCard extends LitElement {
     }
 
     newDiv.innerHTML = htmlOutput;
-
-    // Currently not used, needs integrated into updated function
-    let innercontent = groupedByDay.map((daily) => `
-    <div class="meal">
-        <div class="day">
-            <div>
-                <div class="card-header">
-                  <div class="day"> ${this.getDay(daily.day, lang, tz)}, ${this.getMonth(daily.day, lang, tz)}. ${this.getDayDate(daily.day, lang, tz)} </div>
-                  <p>${typeof daily.section !== 'undefined' && daily.section.name !== null
-                    ? daily.section.name
-                    : ""}
-                  </p>
-            </div>
-            <div>
-                <div class=".info inline">
-                    ${daily.type === 'note' 
-                    ? daily.note 
-                    : ""}
-                    ${daily.type === 'recipe' 
-                      ? typeof daily.recipe_name !== 'undefined' 
-                        ? daily.recipe_name 
-                        : typeof daily.recipe.name !== 'undefined' 
-                          ? daily.recipe.name 
-                        : ""
-                      : ""}
-                    ${daily.type === 'product' 
-                      ? daily.type 
-                      : ""}
-                </div>
-                ${ daily.picture_url !== null ? `<img class="pic" style="${this._config.imgWidth !== null ? `width: ${this._config.imgWidth};` : ""}" src="${daily.picture_url}"></img>` : ""}
-            </div>
-            ${!this._config.hideRecipe ?  
-            `<div class=".info"> 
-                ${daily.type === 'recipe' && typeof daily.recipe.description !== 'undefined' && daily.recipe.description !== null
-                ?  `${ this.recipelength > 0 ? daily.recipe.description.substring(0,this.recipelength) : daily.recipe.description}`
-                : ""}
-            </div>`: "" }
-        </div>
-    </div>          
-    `);
-    // innercontent.forEach(cont => { newDiv.innerHTML += cont;} );
     
     if (newplan.length > 0) {
       console.log("we have a plan");
