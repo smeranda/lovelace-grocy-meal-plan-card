@@ -281,6 +281,9 @@ class MealPlanCard extends LitElement {
           .recipeTitle {
             font-weight: normal;
             opacity: 0.8;
+          }
+
+          .meal { 
             display: inline;
             margin-left: 0.5em;
           }
