@@ -239,8 +239,8 @@ class MealPlanCard extends LitElement {
               font-size: 200%
               background-color: var(--purple-color);
               color: var(--purple-color);
-              margin: 0 0.25em;
-              padding: 0.2em;
+              margin-right: 0.1em;
+              padding: 0.5em;
               border-radius: 100%;
             }
           }
@@ -248,18 +248,21 @@ class MealPlanCard extends LitElement {
           .sectionLunch {
             h3:before {
               color: var(--amber-color);
+              background-color: var(--amber-color);
             }
           }
 
           .sectionDinner {
             h3:before {
               color: var(--teal-color);
+              background-color: var(--teal-color);
             }
           }
 
           .sectionSnack {
             h3:before {
               color: var(--lime-color);
+              background-color: var(--lime-color);
             }
           }
 
