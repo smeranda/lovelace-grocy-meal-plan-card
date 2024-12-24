@@ -230,14 +230,34 @@ class MealPlanCard extends LitElement {
           }
     
           .sectionGroup {
-            padding-left: 1em;
+            
           }
 
           .sectionBreakfast, .sectionLunch, .sectionDinner, .sectionSnack {
             h3:before {
               content: "•";
-              color: #b83b3b;
-              margin: 0 1em;
+              font-size: 200%
+              color: var(--purple-color);
+              margin: 0 0.25em;
+              text-transform: uppercase;
+            }
+          }
+
+          .sectionLunch {
+            h3:before {
+              color: var(--amber-color);
+            }
+          }
+
+          .sectionDinner {
+            h3:before {
+              color: var(--teal-color);
+            }
+          }
+
+          .sectionSnack {
+            h3:before {
+              color: var(--lime-color);
             }
           }
 
