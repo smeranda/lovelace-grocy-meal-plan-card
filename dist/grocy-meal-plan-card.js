@@ -114,6 +114,9 @@ class MealPlanCard extends LitElement {
     
     var newDiv = document.createElement('div');
     newDiv.classList.add("mealMenuWrapper");
+
+    // Count the number of days, we need to create this many columns
+
     
     // Generate HTML
     let htmlOutput = "";
@@ -227,12 +230,13 @@ class MealPlanCard extends LitElement {
   static get styles() {
     return css`
           ha-card {
-            padding: 1em;
+            border: 0;
           }
 
           .mealMenuWrapper {
-            display: flex;
+            display: grid;
             column-gap: 0.5em;
+            grid-template-columns: repeat(auto-fit, minmax(275px, 1fr));
           }
           
           .dayGroup {
