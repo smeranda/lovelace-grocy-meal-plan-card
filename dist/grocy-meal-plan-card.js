@@ -258,40 +258,21 @@ class MealPlanCard extends LitElement {
           }
     
           .sectionGroup {
-            
-          }
-
-          .sectionBreakfast, .sectionLunch, .sectionDinner, .sectionSnack {
-            .sectionTitle:before {
-              content: "•";
-              font-size: 200%
-              background-color: var(--purple-color);
-              color: var(--purple-color);
-              margin-right: 0.1em;
-              padding: 0.5em;
-              border-radius: 100%;
-            }
+            border-left: 2px solid var(--purple-color);
+            padding-left: 0.5em;
+            margin-top: 0.5em;
           }
 
           .sectionLunch {
-            h3:before {
-              color: var(--amber-color);
-              background-color: var(--amber-color);
-            }
+            border-left-color: var(--amber-color);
           }
 
           .sectionDinner {
-            h3:before {
-              color: var(--teal-color);
-              background-color: var(--teal-color);
-            }
+            border-left-color: var(--teal-color);
           }
 
           .sectionSnack {
-            h3:before {
-              color: var(--lime-color);
-              background-color: var(--lime-color);
-            }
+            border-left-color: var(--lime-color);
           }
 
           .day {
@@ -317,13 +298,21 @@ class MealPlanCard extends LitElement {
           }
 
           .sectionTitle {
-            font-weight: normal;
+            font-weight: 10px;
             text-transform: uppercase;
+            color: var(--disabled-text-color);
           }
 
           .recipeTitle {
             font-weight: normal;
-            opacity: 0.8;
+          }
+
+          .recipeTitle:after {
+            content: ',';
+          }
+
+          .recipeTitle:last-of-type:after {
+            content: '';
           }
 
           .meal { 
