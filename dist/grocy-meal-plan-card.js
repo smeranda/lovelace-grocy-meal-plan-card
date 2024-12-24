@@ -113,6 +113,7 @@ class MealPlanCard extends LitElement {
     }, {});
     
     var newDiv = document.createElement('div');
+    newDiv.classList.add("mealMenuWrapper");
     
     // Generate HTML
     let htmlOutput = "";
@@ -139,14 +140,14 @@ class MealPlanCard extends LitElement {
     newDiv.innerHTML = htmlOutput;
     
     if (newplan.length > 0) {
-      console.log("we have a plan");
+      console.log("We have a meal menu plan");
       return newDiv;
     }
     else {
       return html`
       <ha-card>
         <div class="not-found">
-          No meal plans for today.
+          No upcoming meal plans.
         </div>
       </ha-card>            
       `;        
@@ -228,6 +229,29 @@ class MealPlanCard extends LitElement {
           ha-card {
             padding: 1em;
           }
+
+          .mealMenuWrapper {
+            display: flex;
+            column-gap: 0.5em;
+          }
+          
+          .dayGroup {
+            padding-right: 0.5em;
+            border-right: 1px solid var(--divider-color);
+          }
+
+          .dayGroup:last-of-type {
+            padding: 0;
+            border-right: 0;
+          }
+          
+          .dayTitle {
+            font-weight: normal;
+            text-transform: uppercase;
+            color: var(--ha-card-header-color, --primary-text-color);
+            font-family: var(--ha-card-header-font-family, inherit);
+            font-size: 14px;           
+          }
     
           .sectionGroup {
             
@@ -286,25 +310,6 @@ class MealPlanCard extends LitElement {
             margin-top: 1%;
             margin-left: 2.5%;
             alignment-baseline: text-after-edge;
-          }
-          
-          .dayGroup {
-            padding-bottom: 0.5em;
-            border-bottom: 1px solid var(--divider-color);
-            margin-bottom: 0.5em;
-          }
-
-          .dayGroup:last-of-type {
-            padding: 0;
-            margin: 0:
-            border-width: 0;
-          }
-          
-          .dayTitle {
-            font-weight: normal;
-            color: var(--ha-card-header-color, --primary-text-color);
-            font-family: var(--ha-card-header-font-family, inherit);
-            font-size: var(--ha-card-header-font-size, 24px);            
           }
 
           .sectionTitle {
