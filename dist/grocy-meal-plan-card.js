@@ -234,12 +234,14 @@ class MealPlanCard extends LitElement {
           }
 
           .sectionBreakfast, .sectionLunch, .sectionDinner, .sectionSnack {
-            h3:before {
+            .sectionTitle:before {
               content: "•";
               font-size: 200%
+              background-color: var(--purple-color);
               color: var(--purple-color);
               margin: 0 0.25em;
-              text-transform: uppercase;
+              padding: 0.2em;
+              border-radius: 100%;
             }
           }
 
@@ -304,6 +306,7 @@ class MealPlanCard extends LitElement {
 
           .sectionTitle {
             font-weight: normal;
+            text-transform: uppercase;
           }
 
           .recipeTitle {
