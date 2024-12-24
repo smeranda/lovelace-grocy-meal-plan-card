@@ -121,12 +121,12 @@ class MealPlanCard extends LitElement {
         htmlOutput += `<h2 class="dayTitle">${this.getDay(day, lang, tz)}, ${this.getMonth(day, lang, tz)}. ${this.getDayDate(day, lang, tz)}</h2>`;
 
         for (const [sectionName, recipes] of Object.entries(sections)) {
-            htmlOutput += `<div class="section-group">`;
+            htmlOutput += `<div class="sectionGroup section${sectionName}">`;
             htmlOutput += `<h3 class="sectionTitle">${sectionName}</h3>`;
             recipes.forEach(recipe => {
                 htmlOutput += `
                     <div class="meal">
-                        <div class="recipeTitle">${recipe.recipe.name}</div>
+                        <span class="recipeTitle">${recipe.recipe.name}</span>
                     </div>
                 `;
             });
@@ -229,8 +229,16 @@ class MealPlanCard extends LitElement {
             padding: 1em;
           }
     
-          .section-group {
+          .sectionGroup {
             padding-left: 1em;
+          }
+
+          .sectionBreakfast, .sectionLunch, .sectionDinner, .sectionSnack {
+            h3:before {
+              content: "•";
+              color: #b83b3b;
+              margin: 0 1em;
+            }
           }
 
           .day {
