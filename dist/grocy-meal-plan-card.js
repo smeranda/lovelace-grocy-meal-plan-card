@@ -303,6 +303,7 @@ class MealPlanCard extends LitElement {
             display: flex;
             justify-items: center;
             gap: 0.5em;
+            margin-top: 0.5em;
           }
 
           .sectionTitle {
