@@ -297,7 +297,6 @@ class MealPlanCard extends LitElement {
           }
     
           .sectionGroup {
-            border-left: 2px solid var(--purple-color);
             padding-left: 0.5em;
             margin-top: 1em;
           }
@@ -311,24 +310,12 @@ class MealPlanCard extends LitElement {
             color: var(--purple-color);
           }
 
-          .sectionLunch {
-            border-left-color: var(--amber-color);
-          }
-
           .sectionLunch .sectionTitle {
             color: var(--amber-color);
           }
 
-          .sectionDinner {
-            border-left-color: var(--teal-color);
-          }
-
           .sectionDinner .sectionTitle {
             color: var(--teal-color);
-          }
-
-          .sectionSnack {
-            border-left-color: var(--lime-color);
           }
 
           .sectionSnack .sectionTitle {
@@ -364,27 +351,12 @@ class MealPlanCard extends LitElement {
           .meal { 
             display: inline;
           }
-          .recipe_name {
-            font-size: 14px;
-            text-shadow: 1px 1px 3px rgba(0,0,0,0.9);
-            fill: #fff;              
-          }
 
-          .section {
-            font-size: 14px;
-            font-style: italic;
-            text-shadow: 1px 1px 3px rgba(0,0,0,0.9);
-            fill: #fff;              
-          } 
-          
           .pic {
                 width: 10em;
                 float: right;
                 display: inline-block;
                 border-radius: var(--ha-card-border-radius,6px);
-          }
-          .dayname {
-            text-transform: uppercase;
           }
         `;
   }
