@@ -133,7 +133,7 @@ class MealPlanCard extends LitElement {
             recipes.forEach(recipe => {
                 htmlOutput += `
                     <div class="meal">
-                        <span class="recipeTitle">${recipe.recipe.name}</span>
+                        <span class="recipeTitle">${recipe.recipe.name}, </span>
                     </div>
                 `;
             });
@@ -344,14 +344,9 @@ class MealPlanCard extends LitElement {
             content: ',';
           }
 
-          .recipeTitle:last-of-type:after {
-            content: '';
-          }
-
           .meal { 
             display: inline;
           }
-          
           .recipe_name {
             font-size: 14px;
             text-shadow: 1px 1px 3px rgba(0,0,0,0.9);
