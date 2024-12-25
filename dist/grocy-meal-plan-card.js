@@ -329,8 +329,9 @@ class MealPlanCard extends LitElement {
           }
 
           .sectionTitle {
-            font-weight: 10px;
+            font-weight: 8px;
             text-transform: uppercase;
+            line-height: 1;
             color: var(--disabled-text-color);
           }
 
@@ -348,7 +349,6 @@ class MealPlanCard extends LitElement {
 
           .meal { 
             display: inline;
-            margin-left: 1em;
           }
           
           .recipe_name {
