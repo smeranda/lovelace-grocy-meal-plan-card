@@ -130,12 +130,20 @@ class MealPlanCard extends LitElement {
         for (const [sectionName, recipes] of Object.entries(sections)) {
             htmlOutput += `<div class="sectionGroup section${sectionName}">`;
             htmlOutput += `<h3 class="sectionTitle">${sectionName}</h3>`;
-            recipes.forEach(recipe => {
-                htmlOutput += `
-                    <div class="meal">
-                        <span class="recipeTitle">${recipe.recipe.name}, </span>
-                    </div>
-                `;
+            recipes.forEach((recipe, index) => {
+                if (index === array.length - 1) { 
+                  htmlOutput += `
+                      <div class="meal">
+                          <span class="recipeTitle">${recipe.recipe.name}</span>
+                      </div>
+                  `;
+                } else {
+                  htmlOutput += `
+                      <div class="meal">
+                          <span class="recipeTitle">${recipe.recipe.name}, </span>
+                      </div>
+                  `;
+                }
             });
             htmlOutput += `</div>`;
         }
@@ -234,6 +242,7 @@ class MealPlanCard extends LitElement {
     return css`
           ha-card {
             border: 0;
+            overflow: scroll;
           }
 
           .mealMenuWrapper {
@@ -281,8 +290,7 @@ class MealPlanCard extends LitElement {
           }
           
           .dayTitle {
-            font-weight: normal;
-            text-transform: uppercase;
+            font-weight: bold;
             color: var(--ha-card-header-color, --primary-text-color);
             font-family: var(--ha-card-header-font-family, inherit);
             font-size: 14px;           
@@ -338,10 +346,6 @@ class MealPlanCard extends LitElement {
 
           .recipeTitle {
             font-weight: normal;
-          }
-
-          .recipeTitle:after {
-            content: ',';
           }
 
           .meal { 
