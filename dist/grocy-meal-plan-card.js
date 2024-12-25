@@ -116,7 +116,7 @@ class MealPlanCard extends LitElement {
     newDiv.classList.add("mealMenuWrapper");
 
     // Count the number of days, we need to create this many columns
-    countOfEntries = Object.entries(groupedByDay).length;
+    let countOfEntries = Object.entries(groupedByDay).length;
 
     newDiv.classList.add('grid-cols-' + countOfEntries);
 
