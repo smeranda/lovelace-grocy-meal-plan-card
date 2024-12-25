@@ -354,6 +354,7 @@ class MealPlanCard extends LitElement {
 
           .meal { 
             display: inline;
+            color: var(--secondary-text-color, --primary-text-color);
           }
 
           .pic {
