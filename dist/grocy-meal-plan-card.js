@@ -243,6 +243,7 @@ class MealPlanCard extends LitElement {
           ha-card {
             border: 0;
             overflow: scroll;
+            padding: 1em;
           }
 
           .mealMenuWrapper {
@@ -280,8 +281,6 @@ class MealPlanCard extends LitElement {
           }
           
           .dayGroup {
-            padding-right: 0.5em;
-            border-right: 1px solid var(--divider-color);
           }
 
           .dayGroup:last-of-type {
@@ -293,7 +292,8 @@ class MealPlanCard extends LitElement {
             font-weight: bold;
             color: var(--ha-card-header-color, --primary-text-color);
             font-family: var(--ha-card-header-font-family, inherit);
-            font-size: 14px;           
+            font-size: 14px;
+            border-bottom: 1px solid var(--divider-color);      
           }
     
           .sectionGroup {
