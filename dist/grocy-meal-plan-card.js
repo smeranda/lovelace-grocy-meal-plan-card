@@ -300,6 +300,14 @@ class MealPlanCard extends LitElement {
             border-left: 2px solid var(--purple-color);
             padding-left: 0.5em;
             margin-top: 1em;
+          }
+
+          .sectionTitle {
+            font-weight: 8px;
+            font-weight: bold;
+          }
+
+          .sectionBreakfast .sectionTitle {
             color: var(--purple-color);
           }
 
@@ -347,14 +355,6 @@ class MealPlanCard extends LitElement {
             margin-top: 1%;
             margin-left: 2.5%;
             alignment-baseline: text-after-edge;
-          }
-
-          .sectionTitle {
-            font-weight: 8px;
-            text-transform: uppercase;
-            line-height: 1;
-            color: var(--disabled-text-color);
-            margin: 0;
           }
 
           .recipeTitle {
