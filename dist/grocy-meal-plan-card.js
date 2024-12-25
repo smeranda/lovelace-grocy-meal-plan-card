@@ -248,36 +248,36 @@ class MealPlanCard extends LitElement {
 
           .mealMenuWrapper {
             display: grid;
-            column-gap: 0.5em;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            column-gap: 0.75em;
+            grid-template-columns: repeat(auto-fit, minmax(185px, 1fr));
           }
 
           .mealMenuWrapper.grid-cols-3 {
-            grid-template-columns: repeat(3, minmax(200px, 1fr));
+            grid-template-columns: repeat(3, minmax(185px, 1fr));
           }
 
           .mealMenuWrapper.grid-cols-4 {
-            grid-template-columns: repeat(4, minmax(200px, 1fr));
+            grid-template-columns: repeat(4, minmax(185px, 1fr));
           }
 
           .mealMenuWrapper.grid-cols-5 {
-            grid-template-columns: repeat(5, minmax(200px, 1fr));
+            grid-template-columns: repeat(5, minmax(185px, 1fr));
           }
 
           .mealMenuWrapper.grid-cols-6 {
-            grid-template-columns: repeat(6, minmax(200px, 1fr));
+            grid-template-columns: repeat(6, minmax(185px, 1fr));
           }
 
           .mealMenuWrapper.grid-cols-7 {
-            grid-template-columns: repeat(7, minmax(200px, 1fr));
+            grid-template-columns: repeat(7, minmax(185px, 1fr));
           }
 
           .mealMenuWrapper.grid-cols-8 {
-            grid-template-columns: repeat(8, minmax(200px, 1fr));
+            grid-template-columns: repeat(8, minmax(185px, 1fr));
           }
 
           .mealMenuWrapper.grid-cols-9 {
-            grid-template-columns: repeat(9, minmax(200px, 1fr));
+            grid-template-columns: repeat(9, minmax(185px, 1fr));
           }
           
           .dayGroup {
@@ -297,7 +297,6 @@ class MealPlanCard extends LitElement {
           }
     
           .sectionGroup {
-            padding-left: 0.5em;
             margin-top: 1em;
           }
 
