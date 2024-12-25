@@ -125,11 +125,11 @@ class MealPlanCard extends LitElement {
     let htmlOutput = "";
     for (const [day, sections] of Object.entries(groupedByDay)) {
         htmlOutput += `<div class="dayGroup">`;
-        htmlOutput += `<h2 class="dayTitle">${this.getDay(day, lang, tz)}, ${this.getMonth(day, lang, tz)}. ${this.getDayDate(day, lang, tz)}</h2>`;
+        htmlOutput += `<div class="dayTitle">${this.getDay(day, lang, tz)}, ${this.getMonth(day, lang, tz)}. ${this.getDayDate(day, lang, tz)}</div>`;
 
         for (const [sectionName, recipes] of Object.entries(sections)) {
             htmlOutput += `<div class="sectionGroup section${sectionName}">`;
-            htmlOutput += `<h3 class="sectionTitle">${sectionName}</h3>`;
+            htmlOutput += `<div class="sectionTitle">${sectionName}</div>`;
             recipes.forEach((recipe, index) => {
                 if (index === recipes.length - 1) { 
                   htmlOutput += `
@@ -293,26 +293,38 @@ class MealPlanCard extends LitElement {
             color: var(--ha-card-header-color, --primary-text-color);
             font-family: var(--ha-card-header-font-family, inherit);
             font-size: 14px;
-            border-bottom: 1px solid var(--divider-color);
-            padding-top: 0;    
+            border-bottom: 1px solid var(--divider-color); 
           }
     
           .sectionGroup {
             border-left: 2px solid var(--purple-color);
             padding-left: 0.5em;
             margin-top: 1em;
+            color: var(--purple-color);
           }
 
           .sectionLunch {
             border-left-color: var(--amber-color);
           }
 
+          .sectionLunch .sectionTitle {
+            color: var(--amber-color);
+          }
+
           .sectionDinner {
             border-left-color: var(--teal-color);
           }
 
+          .sectionDinner .sectionTitle {
+            color: var(--teal-color);
+          }
+
           .sectionSnack {
             border-left-color: var(--lime-color);
+          }
+
+          .sectionSnack .sectionTitle {
+            color: var(--lime-color);
           }
 
           .day {
