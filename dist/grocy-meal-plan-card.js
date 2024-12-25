@@ -305,7 +305,7 @@ class MealPlanCard extends LitElement {
           }
 
           .sectionTitle {
-            font-weight: 18px;
+            font-size: 18px;
             font-weight: bold;
           }
 
