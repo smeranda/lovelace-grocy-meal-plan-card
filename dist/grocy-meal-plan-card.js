@@ -299,7 +299,7 @@ class MealPlanCard extends LitElement {
           .sectionGroup {
             border-left: 2px solid var(--purple-color);
             padding-left: 0.5em;
-            margin-top: 0.5em;
+            margin-top: 1em;
           }
 
           .sectionLunch {
