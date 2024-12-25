@@ -333,6 +333,7 @@ class MealPlanCard extends LitElement {
             text-transform: uppercase;
             line-height: 1;
             color: var(--disabled-text-color);
+            margin: 0;
           }
 
           .recipeTitle {
