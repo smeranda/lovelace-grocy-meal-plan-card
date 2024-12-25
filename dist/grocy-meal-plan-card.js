@@ -295,7 +295,8 @@ class MealPlanCard extends LitElement {
             color: var(--ha-card-header-color, --primary-text-color);
             font-family: var(--ha-card-header-font-family, inherit);
             font-size: 14px;
-            border-bottom: 1px solid var(--divider-color); 
+            border-bottom: 1px solid var(--divider-color);
+            margin-bottom: 0.5em;
           }
     
           .sectionGroup {
@@ -305,7 +306,7 @@ class MealPlanCard extends LitElement {
           }
 
           .sectionTitle {
-            font-size: 18px;
+            font-size: 22px;
             font-weight: bold;
           }
 
