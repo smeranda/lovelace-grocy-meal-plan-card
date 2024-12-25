@@ -242,6 +242,10 @@ class MealPlanCard extends LitElement {
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
           }
 
+          .mealMenuWrapper.grid-cols-3 {
+            grid-template-columns: repeat(3, minmax(200px, 1fr));
+          }
+
           .mealMenuWrapper.grid-cols-4 {
             grid-template-columns: repeat(4, minmax(200px, 1fr));
           }
