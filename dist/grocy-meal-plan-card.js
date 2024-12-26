@@ -229,7 +229,7 @@ class MealPlanCard extends LitElement {
   getDayDate(theDate, lang) {
     theDate = theDate.split('T')[0] + " 12:00"
 
-    return new Date(theDate).getDay()
+    return new Date(theDate).getDate()
   }
 
   getMonth(theDate, lang, tz) {
