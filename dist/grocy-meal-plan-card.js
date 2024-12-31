@@ -128,7 +128,7 @@ class MealPlanCard extends LitElement {
 
         for (const [sectionName, recipes] of Object.entries(sections)) {
             htmlOutput += `<div class="sectionGroup section${sectionName}">`;
-            htmlOutput += `<div class="sectionTitle">${sectionName.substring(0, 1)}</div>`;
+            htmlOutput += `<div class="sectionTitle">${this.getSectionIcon(sectionName)}</div>`;
             htmlOutput += `<div class="mealGroup">`
             recipes.forEach((recipe, index) => {
                 if (index === recipes.length - 1) { 
@@ -238,7 +238,7 @@ class MealPlanCard extends LitElement {
 
     }
 
-    return icon
+    return icon;
   }
 
   getDay(theDate, lang, tz) {
