@@ -238,7 +238,7 @@ class MealPlanCard extends LitElement {
 
     }
 
-    return icon;
+    return html icon;
   }
 
   getDay(theDate, lang, tz) {
