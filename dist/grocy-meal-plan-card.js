@@ -119,7 +119,6 @@ class MealPlanCard extends LitElement {
     let countOfEntries = Object.entries(groupedByDay).length;
 
     newDiv.classList.add('grid-cols-' + countOfEntries);
-
     
     // Generate HTML
     let htmlOutput = "";
@@ -216,6 +215,30 @@ class MealPlanCard extends LitElement {
         // Compare section.sort_number if days are equal
         return a.section.sort_number - b.section.sort_number;
     });
+  }
+
+  getSectionIcon(section) {
+    let icon;
+
+    switch (section) {
+      case 'Breakfast':
+        icon = `<ha-icon icon="mdi:egg-fried" style="width: 20px; height: 20px; color: '#888888';"></ha-icon>`
+        break;
+      case 'Lunch':
+        icon = `<ha-icon icon="mdi:food-apple" style="width: 20px; height: 20px; color: '#888888';"></ha-icon>`
+        break;
+      case 'Snack':
+        icon = `<ha-icon icon="mdi:candy" style="width: 20px; height: 20px; color: '#888888';"></ha-icon>`
+        break;
+      case 'Dinner':
+        icon = `<ha-icon icon="mdi:grill" style="width: 20px; height: 20px; color: '#888888';"></ha-icon>`
+        break;
+      default:
+        icon = `<ha-icon icon="mdi:beer" style="width: 20px; height: 20px; color: '#888888';"></ha-icon>`
+
+    }
+
+    return icon
   }
 
   getDay(theDate, lang, tz) {
